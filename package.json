@@ -1,0 +1,23 @@
+{
+  "name": "react-native-modal-date-picker",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KenHky/react-native-modal-date-picker"
+  },
+  "files": [
+    "index"
+  ],
+  "dependencies": {
+    "react-native-picker-android": "~1.0.2",
+    "moment": "^2.13.0"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "android",
+    "ios"
+  ]
+}
