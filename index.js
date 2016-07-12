@@ -18,11 +18,12 @@ let PickerItem = Picker.Item;
 
 const moment = require('moment');
 
-const Styles = require('./style')(React,{ Dimensions, StyleSheet });
+const Styles = require('./style/style')(React,{ Dimensions, StyleSheet });
 
 
 
 const DateTimePicker = React.createClass({
+
     getInitialState() {
         return {
             dateData: this.createDateData(),
@@ -41,7 +42,7 @@ const DateTimePicker = React.createClass({
         if (this.props.selectData) {
             defaultData= this.returnDefaultData(this.props.selectData)
         } else {
-            defaultData= this.returnDefaultData(moment().format('YYYY-MM-DD hh:mm:ss'))
+            defaultData= this.returnDefaultData(moment().format('YYYY-MM-DD'))
         }
         console.log(defaultData)
         this.setState(defaultData)
@@ -78,6 +79,12 @@ const DateTimePicker = React.createClass({
         this.setState({openModal:''})
     },
     clickModal () {
+        if (!this.props.keepShowModal) {
+            this.closeModal()
+        }
+    },
+    clickPicker () {
+
     },
 
 
@@ -218,33 +225,37 @@ const DateTimePicker = React.createClass({
     },
 
     render () {
-        const {openModal,modalName} = this.state
+        const {openModal,modalName} = this.state;
+        const {selectData,formater,cancleText,finishText,title,modalColor,pickerHeight,pickerColor,buttonColor} = this.props;
         const modalBackgroundStyle = {
-              backgroundColor: 'rgba(0,0,0,0.4)',
+              backgroundColor: (modalColor?modalColor:'rgba(0,0,0,0.4)'),
             };
+        const pickerHeightStyle = pickerHeight?{height:pickerHeight}:{};
+        const pickerColorStyle = pickerColor?{backgroundColor:pickerColor}:{};
+        const buttonColorStyle = buttonColor?{color:buttonColor}:{};
         return (
             <View>
                 <TouchableOpacity onPress={this.toggleModal}>
-                    <Text>{this.props.selectData?moment(this.props.selectData).format(this.props.formater||'YYYY-MM-DD'):"请选择日期"}</Text>
+                    <Text>{selectData?moment(selectData).format(formater||'YYYY-MM-DD'):"请选择日期"}</Text>
                 </TouchableOpacity>
                 {
                     openModal==modalName?(
-                        <Modal animated={false} visible={true} transparent={true}>
-                            <TouchableOpacity style={[Styles.modal,modalBackgroundStyle]} onPress={this.closeModal}>
-                                <View style={[Styles.picker]}>
-                                    <TouchableWithoutFeedback style={[Styles.pickerView]} onPress={this.clickModal}>
+                        <Modal animated={true} visible={true} transparent={true}>
+                            <TouchableOpacity style={[Styles.modal,modalBackgroundStyle]} activeOpacity={1} onPress={this.clickModal}>
+                                <View style={[Styles.picker,pickerHeightStyle]}>
+                                    <TouchableWithoutFeedback style={[Styles.pickerView,pickerHeightStyle,pickerColorStyle]} onPress={this.clickPicker}>
                                         <View style={[Styles.pickerView]}>
                                             <View style={[Styles.pickerToolbar]}>
                                                 <View style={Styles.pickerCancelBtn}>
-                                                    <Text style={[Styles.pickerFinishBtnText]}
-                                                        onPress={this._pickerCancel}>取消</Text>
+                                                    <Text style={[Styles.pickerFinishBtnText,buttonColorStyle]}
+                                                        onPress={this._pickerCancel}>{cancleText?cancleText:"取消"}</Text>
                                                 </View>
                                                 <Text style={[Styles.pickerTitle]} numberOfLines={1}>
-                                                    请选择日期
+                                                    {title?title:"请选择日期"}
                                                 </Text>
                                                 <View style={Styles.pickerFinishBtn}>
-                                                    <Text style={[Styles.pickerFinishBtnText]}
-                                                        onPress={this._pickerFinish}>确定</Text>
+                                                    <Text style={[Styles.pickerFinishBtnText,buttonColorStyle]}
+                                                        onPress={this._pickerFinish}>{finishText?finishText:"确定"}</Text>
                                                 </View>
                                             </View>
                                             {this.returnDatePicker()}
