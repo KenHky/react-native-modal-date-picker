@@ -9,15 +9,25 @@ react native date picker
 
 ### API
 selectData: 选择的值，通过onSelect回调修改，格式为“YYYY-MM-DD”。
+
 onSelect： 回调函数，参数为修改后的data值。
+
 formater： 显示的格式，默认为“YYYY-MM-DD”，可参考[moment](http://momentjs.com/)修改。
+
 cancleText： 取消的文本，默认为“取消”。
+
 finishText： 确定的文本，默认为“确定”。
+
 title： 组件标题，默认为“请选择日期”。
+
 modalColor： modal层的颜色，默认为“rgba(0,0,0,0.4)”。
+
 pickerColor： 组件的颜色，默认为“rgba(255,255,255,0.8)”。
+
 buttonColor： 确定和取消按钮的颜色，默认为“#FE751D”。
+
 pickerHeight： 组件的高度，默认为400。
+
 keepShowModal： 点击组件外的modal层是否不关闭组件，默认关闭组件。值为true或false。
 
 ### 安装

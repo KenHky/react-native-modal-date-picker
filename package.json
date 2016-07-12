@@ -1,7 +1,7 @@
 {
   "name": "react-native-modal-date-picker",
   "version": "0.0.1",
-  "description": "",
+  "description": "a simple date picker for react native",
   "main": "index.js",
   "repository": {
     "type": "git",
