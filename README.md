@@ -3,7 +3,7 @@ react native date picker
 
 ###简介
  
- 这是一个react-native的时间选择器，使用了iOS原生的modal和picker组件。
+ 这是一个react-native的时间选择器，使用了原生的modal和picker组件。
  支持ios和android。
 ![](./pic/datepicker-ios.gif) 
 
