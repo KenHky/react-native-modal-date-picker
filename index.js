@@ -240,7 +240,7 @@ const DateTimePicker = React.createClass({
                 </TouchableOpacity>
                 {
                     openModal==modalName?(
-                        <Modal animated={true} visible={true} transparent={true}>
+                        <Modal animationType="slide" visible={true} transparent={true}>
                             <TouchableOpacity style={[Styles.modal,modalBackgroundStyle]} activeOpacity={1} onPress={this.clickModal}>
                                 <View style={[Styles.picker,pickerHeightStyle]}>
                                     <TouchableWithoutFeedback style={[Styles.pickerView,pickerHeightStyle,pickerColorStyle]} onPress={this.clickPicker}>
