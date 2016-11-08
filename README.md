@@ -15,7 +15,7 @@ react native date picker
  
  这是一个 react-native 的时间选择器，使用了原生的 modal 和 picker 组件。
  支持 ios 和 android。
- 
+
 ![](./pic/datepicker-ios.gif) 
 
 ### API
@@ -25,11 +25,11 @@ onChange： 回调函数，参数为修改后的data值。(1.0.0新增)
 
 dateTextStyle: 日期文字的样式。(1.0.0新增)
 
-~~ selectData: 选择的值，通过onSelect回调修改，格式为“YYYY-MM-DD”。(1.0.0删除)
+~~selectData: 选择的值，通过onSelect回调修改，格式为“YYYY-MM-DD”。(1.0.0删除)~~
 
-~~ onSelect： 回调函数，参数为修改后的data值。(1.0.0删除)
+~~onSelect： 回调函数，参数为修改后的data值。(1.0.0删除)~~
 
-~~ formater： 显示的格式，默认为“YYYY-MM-DD”，可参考[moment](http://momentjs.com/)修改。(1.0.0删除)
+~~formater： 显示的格式，默认为“YYYY-MM-DD”，可参考[moment](http://momentjs.com/)修改。(1.0.0删除)~~
 
 cancleText： 取消的文本，默认为“取消”。
 
