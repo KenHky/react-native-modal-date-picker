@@ -81,6 +81,7 @@ export default class rndemo extends Component {
           pickerHeight={400} 
           pickerColor="#fff" 
           buttonColor="#000"
+					dateTextStyle={{color:'red'}}
         />
       </View>
     )
