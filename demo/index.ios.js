@@ -7,32 +7,31 @@ import {
   Text,
   View
 } from 'react-native';
-
 import Picker from 'react-native-modal-date-picker'
 import moment from 'moment'
 
-class AwesomeProject extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: moment(new Date).format('YYYY-MM-DD')
-    };
+export default class rndemo extends Component {
+  onChange (data) {
+    console.log("new date",data)
   }
-  onSelect (value) {
-    this.setState({value:value})   
-  }
-
   render() {
     return (
       <View style={{marginTop:40}}>
-        <Picker selectData={this.state.value} onSelect={this.onSelect.bind(this)} formater="YYYY-MM-DD hh:mm:ss" cancleText="cancle" finishText="finish" title="title" modalColor="#000" keepShowModal={true} pickerHeight={400} pickerColor="#fff" buttonColor="#000"/>
+        <Picker 
+          defaultData={moment(new Date).format('YYYY-MM-DD')} 
+          onChange={this.onChange} 
+          keepShowModal={true} 
+          cancleText="cancle" 
+          finishText="finish" 
+          title="title" 
+          modalColor="#000" 
+          pickerHeight={400} 
+          pickerColor="#fff" 
+          buttonColor="#000"
+        />
       </View>
-    );
+    )
   }
 }
 
-const styles = StyleSheet.create({
-  
-});
-
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('rndemo', () => rndemo)

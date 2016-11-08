@@ -1,6 +1,6 @@
 {
   "name": "react-native-modal-date-picker",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "a simple date picker for react native",
   "main": "index.js",
   "repository": {
@@ -9,11 +9,12 @@
   },
   "files": [
     "index",
-    "style"
+    "style",
+    "component"
   ],
   "dependencies": {
     "react-native-picker-android": "~1.0.2",
-    "moment": "^2.13.0"
+    "moment": "~2.15.2"
   },
   "keywords": [
     "react-native",
