@@ -43,14 +43,14 @@ pickerColor： 组件的颜色，默认为“rgba(255,255,255,0.8)”。
 
 buttonColor： 确定和取消按钮的颜色，默认为“#FE751D”。
 
-pickerHeight： 组件的高度，默认为400。
+pickerHeight： 组件的高度，默认为300。
 
 keepShowModal： 点击组件外的modal层是否不关闭组件，默认关闭组件。值为true或false。
 
 ### 安装
     npm install react-native-modal-date-picker --save
     
-###使用
+### 使用
 
 ```javascript
 import React, { Component } from 'react';
@@ -92,5 +92,5 @@ AppRegistry.registerComponent('rndemo', () => rndemo)
 ```
 
 
-###协议
+### 协议
 MIT

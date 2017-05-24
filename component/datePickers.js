@@ -3,6 +3,7 @@ import {
   TouchableWithoutFeedback,
   View,
   Text,
+  Platform,
   Dimensions,
 } from 'react-native'
 import DatePicker from './datePicker'
@@ -69,7 +70,8 @@ export default class DatePickers extends Component {
   }
   render() {
     const { 
-      Styles, 
+      Styles,
+      pickerHeight,
     } = this.props
     const {
       monthGroup,
@@ -78,8 +80,9 @@ export default class DatePickers extends Component {
       selectedMonth,
       selectedDay,
     } = this.state
+    const isAndroid = Platform.OS === 'ios' ? {} : { height: pickerHeight - 70, maxHeight: 300 }
     return (
-      <View style={[Styles.pickerWrap]}>
+      <View style={[Styles.pickerWrap, isAndroid]}>
         <DatePicker 
           Styles={Styles} 
           group={yuarGroup} 

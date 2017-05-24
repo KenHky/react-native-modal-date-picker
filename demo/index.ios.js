@@ -25,7 +25,7 @@ export default class rndemo extends Component {
           finishText="finish" 
           title="title" 
           modalColor="#000" 
-          pickerHeight={400} 
+          pickerHeight={300} 
           pickerColor="#fff" 
           buttonColor="#000"
           dateTextStyle={{color:'blue'}}

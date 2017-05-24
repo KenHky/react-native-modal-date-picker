@@ -17,7 +17,6 @@ export default StyleSheet.create({
   },
   pickerWheel: {
     flex: 1,
-    height:250,
   },
   pickerToolbar: {
     height: 30,

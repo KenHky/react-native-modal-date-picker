@@ -57,7 +57,7 @@ export default class DateTimePicker extends Component {
     const { 
       dateTextStyle, 
       modalColor, 
-      pickerHeightStyle,
+      pickerHeight,
       pickerColorStyle,
       buttonColorStyle,
       cancleText,
@@ -66,6 +66,7 @@ export default class DateTimePicker extends Component {
       type,
     } = this.props
     const { nowDate,openModal, modalName } = this.state
+    const pickerHeightStyle = pickerHeight ? {height : pickerHeight} : {}
     return (
       <View>
         <TouchableOpacity onPress={this.toggleModal}>
@@ -93,6 +94,7 @@ export default class DateTimePicker extends Component {
             />
             <DatePickers 
               ref={r => this.pickerRef = r}
+              pickerHeight={pickerHeight}
               Styles={Styles} 
               nowDate={nowDate || moment(new Date).format('YYYY-MM-DD')}
               type={type}
