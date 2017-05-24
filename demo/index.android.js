@@ -18,7 +18,6 @@ export default class rndemo extends Component {
     return (
       <View style={{marginTop:40}}>
         <Picker 
-          defaultData={moment(new Date).format('YYYY-MM-DD')} 
           onChange={this.onChange} 
           keepShowModal={true} 
           cancleText="cancle" 

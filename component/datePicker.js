@@ -6,6 +6,7 @@ import {
   Platform,
   PickerIOS,
 } from 'react-native'
+import PickerAndroid from 'react-native-picker-android'
 let Picker = Platform.OS === 'ios' ? PickerIOS : PickerAndroid
 let PickerItem = Picker.Item
 

@@ -94,7 +94,7 @@ export default class DateTimePicker extends Component {
             <DatePickers 
               ref={r => this.pickerRef = r}
               Styles={Styles} 
-              nowDate={nowDate}
+              nowDate={nowDate || moment(new Date).format('YYYY-MM-DD')}
               type={type}
             />
           </View>

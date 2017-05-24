@@ -26,6 +26,7 @@ export default class DateModal extends Component {
     return (
       <Modal 
         animationType="slide"
+        onRequestClose={()=>{}}
         visible={visible} 
         transparent={true}
       >
